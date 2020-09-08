@@ -1,6 +1,11 @@
 
 
 def productSum(array):
+    """Computes a "product-sum".
+    
+    Returns the sum of the elements in a nested array multiplied
+    by the factorial of their depth.
+    """
     def rec(array, depth):
         if type(array) is int:
             return array
