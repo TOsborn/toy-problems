@@ -1,4 +1,4 @@
-import solution
+import longest_peak
 import pytest
 
 test_cases = [
@@ -10,4 +10,4 @@ test_cases = [
 
 @pytest.mark.parametrize("test_input,expected", test_cases)
 def test_solution(test_input, expected):
-    assert solution.longestPeak(test_input) == expected
+    assert longest_peak.longestPeak(test_input) == expected

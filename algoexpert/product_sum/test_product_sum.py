@@ -1,4 +1,4 @@
-import solution
+import product_sum
 import pytest
 
 
@@ -23,4 +23,4 @@ test_cases = [
 
 @pytest.mark.parametrize("test_input,expected", test_cases)
 def test_productSum(test_input, expected):
-    assert solution.productSum(test_input) == expected
+    assert product_sum.productSum(test_input) == expected
