@@ -2,6 +2,24 @@ from bst import BST
 
 def validateBst(tree):
     """Check that tree is a valid binary search tree."""
+    def rec(tree, min_value, max_value):
+        if tree is None:
+            return True
+        
+        if not min_value <= tree.value < max_value:
+            return False
+
+        left_is_valid = rec(tree.left, min_value, tree.value)
+        right_is_valid = rec(tree.right, tree.value, max_value)
+
+        return left_is_valid and right_is_valid
+
+    return rec(tree, -float('inf'), float('inf'))
+
+#################################
+
+def validateBst2(tree):
+    """Check that tree is a valid binary search tree."""
     def rec(tree):
         if tree is None:
             return True, float('inf'), -float('inf')
@@ -23,7 +41,7 @@ def validateBst(tree):
 
 ####################################
 
-def validateBst2(tree):
+def validateBst3(tree):
     """Check that tree is a valid binary search tree."""
     is_valid, _, _ = _validateBstHelper(tree)
 
@@ -99,7 +117,7 @@ class _BSTValidator:
 
         return self._max_val[tree]
 
-def validateBst3(tree):
+def validateBst4(tree):
     """Check that tree is a valid binary search tree."""
     return _BSTValidator().validateBst(tree)
 
