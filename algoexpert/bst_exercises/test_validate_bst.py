@@ -1,4 +1,4 @@
-from validate_bst import validateBst
+import validate_bst
 from bst import BST
 
 from random import shuffle
@@ -9,52 +9,52 @@ def test_valid():
     root.left = BST(1)
     root.right = BST(3)
 
-    assert validateBst(root) is True
+    assert validate_bst.validateBst(root) is True
 
 def test_invalid():
     root = BST(1)
     root.left = BST(2)
     root.right = BST(3)
 
-    assert validateBst(root) is False
+    assert validate_bst.validateBst(root) is False
 
 def test_equal_valid():
     root = BST(2)
     root.left = BST(1)
     root.right = BST(2)
 
-    assert validateBst(root) is True
+    assert validate_bst.validateBst(root) is True
 
 def test_equal_invalid():
     root = BST(2)
     root.left = BST(2)
     root.right = BST(3)
 
-    assert validateBst(root) is False
+    assert validate_bst.validateBst(root) is False
 
 def test_single_node():
     root = BST(1)
 
-    assert validateBst(root) is True
+    assert validate_bst.validateBst(root) is True
 
 def test_two_layers_valid():
     root = BST(3)
     root.left = BST(2)
     root.left.left = BST(1)
 
-    assert validateBst(root) is True
+    assert validate_bst.validateBst(root) is True
 
 def test_layer_down_invalid():
     root = BST(2)
     root.left = BST(1)
     root.left.right = BST(2)
 
-    assert validateBst(root) is False
+    assert validate_bst.validateBst(root) is False
 
 def test_random_large_bst_valid():
     root = _construct_bst(list(range(100)))
 
-    assert validateBst(root) is True
+    assert validate_bst.validateBst(root) is True
 
 def test_random_large_bst_invalid():
     root = _construct_bst(list(range(100)))
@@ -64,7 +64,15 @@ def test_random_large_bst_invalid():
         assert root.right
         root.right.value = -1
 
-    assert validateBst(root) is False
+    assert validate_bst.validateBst(root) is False
+
+def test_two_layers_down_invalid():
+    root = BST(3)
+    root.left = BST(2)
+    root.left.left = BST(1)
+    root.left.left.right = BST(0)
+
+    assert validate_bst.validateBst(root) is False
 
 def _construct_bst(values):
     if values == []:
