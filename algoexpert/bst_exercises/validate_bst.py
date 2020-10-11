@@ -1,5 +1,52 @@
 from bst import BST
 
+def validateBst(tree):
+    """Check that tree is a valid binary search tree."""
+    def rec(tree):
+        if tree is None:
+            return True, float('inf'), -float('inf')
+
+        left_is_valid, left_min_val, left_max_val = rec(tree.left)
+        right_is_valid, right_min_val, right_max_val = rec(tree.right)
+
+        root_is_valid = (left_max_val < tree.value <= right_min_val)
+        is_valid = left_is_valid and right_is_valid and root_is_valid
+
+        min_val = min(tree.value, left_min_val)
+        max_val = max(tree.value, right_max_val)
+
+        return is_valid, min_val, max_val
+
+    is_valid, _, _ = rec(tree)
+    
+    return is_valid
+
+####################################
+
+def validateBst2(tree):
+    """Check that tree is a valid binary search tree."""
+    is_valid, _, _ = _validateBstHelper(tree)
+
+    return is_valid
+
+def _validateBstHelper(tree):
+    """Return (is_valid, min_val, max_val)."""
+    if tree is None:
+        return True, float('inf'), -float('inf')
+
+    left_is_valid, left_min_val, left_max_val = _validateBstHelper(tree.left)
+    right_is_valid, right_min_val, right_max_val = _validateBstHelper(tree.right)
+
+    root_is_valid = (left_max_val < tree.value <= right_min_val)
+    is_valid = left_is_valid and right_is_valid and root_is_valid
+
+    min_val = min(tree.value, left_min_val, right_min_val)
+    max_val = max(tree.value, left_max_val, right_max_val)
+
+    return is_valid, min_val, max_val
+
+#################################
+
 class _BSTValidator:
     def validateBst(self, tree):
         self._populateMinMaxDicts(tree)
@@ -52,7 +99,7 @@ class _BSTValidator:
 
         return self._max_val[tree]
 
-def validateBst(tree):
+def validateBst3(tree):
     """Check that tree is a valid binary search tree."""
     return _BSTValidator().validateBst(tree)
 
