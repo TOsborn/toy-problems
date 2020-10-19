@@ -2,13 +2,13 @@ from bst_traversal import BST, inOrderTraverse, preOrderTraverse, \
     postOrderTraverse
 
 
-one = BST(1)
-two = BST(2)
-three = BST(3)
-four = BST(4)
-five = BST(5)
-
 def setup():
+    one = BST(1)
+    two = BST(2)
+    three = BST(3)
+    four = BST(4)
+    five = BST(5)
+    
     one.left = two
     one.right = three
 
