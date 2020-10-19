@@ -1,3 +1,4 @@
+# O(log_(4/3)(n*m)) time | O(1) space
 def searchInSortedMatrix(matrix, target):
     if not matrix or not matrix[0]:
         return [-1, -1]
