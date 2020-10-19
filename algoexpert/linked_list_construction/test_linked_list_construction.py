@@ -331,15 +331,3 @@ def test_2():
     assert dll == DoublyLinkedList([4, 1, 5, 6])
 
     assert dll.containsNodeWithValue(5)
-
-
-
-
-
-
-
-
-
-
-
-
