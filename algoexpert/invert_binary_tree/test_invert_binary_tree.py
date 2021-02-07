@@ -1,5 +1,3 @@
-import pytest
-
 from .invert_binary_tree import BinaryTree, invertBinaryTree
 
 
