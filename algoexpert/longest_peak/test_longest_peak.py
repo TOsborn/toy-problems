@@ -1,4 +1,4 @@
-import longest_peak
+from . import longest_peak
 import pytest
 
 test_cases = [

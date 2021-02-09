@@ -1,4 +1,4 @@
-import spiral_traverse
+from . import spiral_traverse
 import pytest
 
 test_cases = [

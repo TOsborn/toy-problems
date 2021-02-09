@@ -1,4 +1,4 @@
-from search_in_sorted_matrix import searchInSortedMatrix
+from .search_in_sorted_matrix import searchInSortedMatrix
 
 def test_searchInSortedMatrix_1():
     matrix = [

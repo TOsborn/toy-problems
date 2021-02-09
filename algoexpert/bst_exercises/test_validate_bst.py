@@ -1,5 +1,5 @@
-import validate_bst
-from bst import BST
+from .bst import BST
+from . import validate_bst
 
 from random import shuffle
 import pytest

@@ -1,4 +1,4 @@
-import permutations
+from . import permutations
 import pytest
 
 from collections import Counter

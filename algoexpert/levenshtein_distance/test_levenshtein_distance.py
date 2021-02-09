@@ -1,4 +1,4 @@
-from levenshtein_distance import levenshteinDistance, levenshteinDistance2
+from .levenshtein_distance import levenshteinDistance, levenshteinDistance2
 import pytest
 
 def test_levenshteinDistance_1():

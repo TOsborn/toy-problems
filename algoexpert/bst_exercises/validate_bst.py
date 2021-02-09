@@ -1,4 +1,4 @@
-from bst import BST
+from .bst import BST
 
 def validateBst(tree):
     """Check that tree is a valid binary search tree."""

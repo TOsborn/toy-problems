@@ -1,4 +1,4 @@
-import product_sum
+from . import product_sum
 import pytest
 
 

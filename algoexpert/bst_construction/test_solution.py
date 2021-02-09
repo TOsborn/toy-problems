@@ -1,4 +1,4 @@
-from solution import BST
+from .solution import BST
 
 import pytest
 from collections import namedtuple

@@ -1,4 +1,4 @@
-import powerset
+from . import powerset
 import pytest
 
 test_cases = [

@@ -1,4 +1,4 @@
-from bst_traversal import BST, inOrderTraverse, preOrderTraverse, \
+from .bst_traversal import BST, inOrderTraverse, preOrderTraverse, \
     postOrderTraverse
 import pytest
 

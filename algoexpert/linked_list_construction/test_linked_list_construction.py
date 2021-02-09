@@ -1,4 +1,4 @@
-from linked_list_construction import DoublyLinkedList, Node
+from .linked_list_construction import DoublyLinkedList, Node
 
 # constructor
 def test_constructor_multiple_nodes():

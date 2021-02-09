@@ -1,4 +1,4 @@
-from balanced_brackets import balancedBrackets
+from .balanced_brackets import balancedBrackets
 
 def test_balancedBrackets_sample():
     string = "([])(){}(())()()"
